@@ -136,82 +136,71 @@ else:
     )
 import streamlit as st
 
-# ------- Uniqlo-style Minimal Theme CSS -------
-uniqlo_css = """
+# ------- Uniqlo Dark Mode Theme -------
+uniqlo_dark_css = """
 <style>
 
-/* Main app background */
+/* MAIN BACKGROUND */
 .stApp {
-    background-color: #ffffff;
-    color: #111111;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #000000 !important;   /* Black background */
+    color: #ff2b2b !important;              /* Uniqlo red text */
 }
 
-/* Sidebar */
+/* SIDEBAR */
 [data-testid="stSidebar"] {
-    background-color: #ffffff;
-    border-right: 1px solid #dddddd;
+    background-color: #2e2e2e !important;   /* Dark gray */
+    border-right: 1px solid #444444 !important;
 }
 
-/* Title */
-h1 {
-    color: #e60012 !important;  /* Uniqlo red */
+[data-testid="stSidebar"] * {
+    color: #ff2b2b !important;              /* Red text inside sidebar */
+}
+
+/* TITLES */
+h1, h2, h3, h4 {
+    color: #ff2b2b !important;
     font-weight: 700 !important;
 }
 
-/* Section headers */
-h2, h3 {
-    color: #333333 !important;
-    font-weight: 600 !important;
-    border-left: 4px solid #e60012;
-    padding-left: 8px;
-}
-
-/* Metrics: value red, label dark */
+/* METRIC VALUE */
 [data-testid="stMetricValue"] {
-    color: #e60012 !important;
-    font-weight: 700 !important;
-    font-size: 1.4rem !important;
+    color: #ff2b2b !important;
+    font-weight: 800 !important;
 }
 
+/* METRIC LABEL */
 [data-testid="stMetricLabel"] {
-    color: #555555 !important;
-    font-weight: 500 !important;
+    color: #ff5a5a !important;
 }
 
-/* Horizontal rule */
-hr {
-    border: none;
-    border-top: 1px solid #eeeeee;
-    margin: 1rem 0;
-}
-
-/* Alert boxes */
+/* ALERT BOXES */
 [data-testid="stAlert"] {
-    border-radius: 6px;
-    border-left: 4px solid #e60012;
+    background-color: #1a1a1a !important;
+    color: #ff2b2b !important;
+    border-left: 4px solid #ff2b2b !important;
 }
 
-/* Buttons (in case you add any later) */
+/* BUTTONS */
 .stButton > button {
-    background-color: #e60012;
-    color: #ffffff;
-    border-radius: 6px;
+    background-color: #ff2b2b !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
     border: none;
-    padding: 0.4rem 1rem;
-    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
 }
 
 .stButton > button:hover {
-    background-color: #c3000f;
+    background-color: #ff0000 !important;
 }
 
-/* Sidebar headers */
-[data-testid="stSidebar"] h2, 
-[data-testid="stSidebar"] h3 {
-    color: #e60012 !important;
+/* FIX INPUT BOXES (so they are readable on black bg) */
+input, select, textarea {
+    background-color: #222222 !important;
+    color: #ff2b2b !important;
+    border: 1px solid #444444 !important;
 }
 
 </style>
 """
-st.markdown(uniqlo_css, unsafe_allow_html=True)
+st.markdown(uniqlo_dark_css, unsafe_allow_html=True)
