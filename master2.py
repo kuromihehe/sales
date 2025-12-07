@@ -134,57 +134,84 @@ else:
         "- Observe factors contributing to strong performance\n"
         "- Use surplus margin to test layout or promotional ideas"
     )
-    # ------- Uniqlo-style Red Theme CSS -------
+import streamlit as st
+
+# ------- Uniqlo-style Minimal Theme CSS -------
 uniqlo_css = """
 <style>
-/* Main background */
-body {
+
+/* Main app background */
+.stApp {
     background-color: #ffffff;
+    color: #111111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Sidebar background */
+/* Sidebar */
 [data-testid="stSidebar"] {
     background-color: #ffffff;
-    border-right: 2px solid #e60012; /* Uniqlo red */
+    border-right: 1px solid #dddddd;
 }
 
-/* Title styling */
+/* Title */
 h1 {
-    color: #e60012 !important;
+    color: #e60012 !important;  /* Uniqlo red */
     font-weight: 700 !important;
 }
 
 /* Section headers */
-h2, h3, h4 {
-    color: #e60012 !important;
+h2, h3 {
+    color: #333333 !important;
+    font-weight: 600 !important;
+    border-left: 4px solid #e60012;
+    padding-left: 8px;
 }
 
-/* Metric styling */
+/* Metrics: value red, label dark */
 [data-testid="stMetricValue"] {
     color: #e60012 !important;
     font-weight: 700 !important;
+    font-size: 1.4rem !important;
 }
 
-/* Buttons */
-.stButton>button {
-    background-color: #e60012;
-    color: white;
+[data-testid="stMetricLabel"] {
+    color: #555555 !important;
+    font-weight: 500 !important;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin: 1rem 0;
+}
+
+/* Alert boxes */
+[data-testid="stAlert"] {
     border-radius: 6px;
-    padding: 0.5rem 1rem;
+    border-left: 4px solid #e60012;
+}
+
+/* Buttons (in case you add any later) */
+.stButton > button {
+    background-color: #e60012;
+    color: #ffffff;
+    border-radius: 6px;
+    border: none;
+    padding: 0.4rem 1rem;
     font-weight: 600;
 }
 
-/* Error box */
-.stAlert {
-    border-left: 6px solid #e60012 !important;
+.stButton > button:hover {
+    background-color: #c3000f;
 }
 
-/* Success box */
-.stSuccess {
-    border-left: 6px solid #008000 !important;
+/* Sidebar headers */
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+    color: #e60012 !important;
 }
+
 </style>
 """
 st.markdown(uniqlo_css, unsafe_allow_html=True)
-
-
