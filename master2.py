@@ -109,3 +109,29 @@ else:
         "- In the main project, this logic is replaced by ARIMA / XGBoost / LSTM ensemble models.\n"
         "- All data used here is simulated and for demonstration only."
     )
+    # ------- Shortfall or Surplus (English + Suggested Actions) --------
+if shortfall > 0:
+    st.error(
+        f"Projected shortfall: {yen_to_man(shortfall):.1f} 万円 "
+        f"({100 - achievement:.1f}% below target)"
+    )
+    st.markdown("#### Suggested Actions")
+    st.write(
+        "- Increase floor staff focus on high-value items\n"
+        "- Promote seasonal or bundled products\n"
+        "- Reduce backroom tasks during peak hours\n"
+        "- Speed up fitting room and checkout operations"
+    )
+
+else:
+    st.success(
+        f"Projected surplus: {yen_to_man(-shortfall):.1f} 万円 "
+        f"({achievement - 100:.1f}% above target)"
+    )
+    st.markdown("#### Suggested Actions")
+    st.write(
+        "- Maintain current staffing strategy\n"
+        "- Observe factors contributing to strong performance\n"
+        "- Use surplus margin to test layout or promotional ideas"
+    )
+
