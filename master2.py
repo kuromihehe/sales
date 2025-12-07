@@ -134,4 +134,57 @@ else:
         "- Observe factors contributing to strong performance\n"
         "- Use surplus margin to test layout or promotional ideas"
     )
+    # ------- Uniqlo-style Red Theme CSS -------
+uniqlo_css = """
+<style>
+/* Main background */
+body {
+    background-color: #ffffff;
+}
+
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: #ffffff;
+    border-right: 2px solid #e60012; /* Uniqlo red */
+}
+
+/* Title styling */
+h1 {
+    color: #e60012 !important;
+    font-weight: 700 !important;
+}
+
+/* Section headers */
+h2, h3, h4 {
+    color: #e60012 !important;
+}
+
+/* Metric styling */
+[data-testid="stMetricValue"] {
+    color: #e60012 !important;
+    font-weight: 700 !important;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #e60012;
+    color: white;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+
+/* Error box */
+.stAlert {
+    border-left: 6px solid #e60012 !important;
+}
+
+/* Success box */
+.stSuccess {
+    border-left: 6px solid #008000 !important;
+}
+</style>
+"""
+st.markdown(uniqlo_css, unsafe_allow_html=True)
+
 
